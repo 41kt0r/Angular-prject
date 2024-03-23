@@ -42,12 +42,12 @@ export class PostsService {
   // opit za like button
 
   postTotalLikes(postId: string): Observable<number> {
-    const url = `http://localhost:3030/data/likes?where=episodeId%3D%22${postId}%22&distinct=_ownerId&count`;
+    const url = `http://localhost:3030/data/likes?where=postId%3D%22${postId}%22&distinct=_ownerId&count`;
     return this.http.get<number>(url);
   }
 
   canLike(postId: string, userId: string): Observable<number> {
-    const url = `http://localhost:3030/data/likes?where=episodeId%3D%22${postId}%22%20and%20_ownerId%3D%22${userId}%22&count`;
+    const url = `http://localhost:3030/data/likes?where=postId%3D%22${postId}%22%20and%20_ownerId%3D%22${userId}%22&count`;
     return this.http.get<number>(url);
   }
 

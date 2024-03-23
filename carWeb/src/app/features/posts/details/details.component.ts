@@ -63,7 +63,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
 
   }
 
-  episodeLike(postId: string) {
+  postLike(postId: string) {
     this.subscribe$ = this.PostsService.likePostById(postId).subscribe({
       error: (error) => {
         if (error.message.includes('Unknown Error')) {

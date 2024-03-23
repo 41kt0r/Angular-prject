@@ -6,16 +6,25 @@
                     <img class="current__img" src="{{ car.imageUrl}}" alt="">
                 </div>
                 <div class="card__likes">
-                    <p>Likes:</p>
-                    <P>{{ car.likes }}</P>
+                    <span class="likesCount">Likes: {{ likes$ | async }}</span>
                 </div>
                 <div class="details__button">
                     <ng-container *ngIf="!isOwner && isLogged">
-                        <div class="guest__buttons" *ngIf="(canLike$ | async) == 0">
-                            <button class="detBtn" href="javascript:void(0)" (click)="episodeLike(car._id)">Like</button>
-                            <!-- <button class="detBtn">Coment</button> -->
+                        <div class="likeButtons">
+                          <div *ngIf="(canLike$ | async) == 0">
+                            <a href="javascript:void(0)" (click)="postLike(car._id)" class="detBtn">
+                              Like
+                            </a>
+                          </div>
+                
+                          <div *ngIf="(canLike$ | async) != 0">
+                            <a href="javascript:void(0)">
+                              You have already liked this post!
+                            </a>
+                          </div>
+                
                         </div>
-                    </ng-container>
+                      </ng-container>
                    
                 </div>
             </div>
@@ -55,6 +64,8 @@
                         <button class="detBtn" href="javascript:void(0)" (click)="removePost(car._id)">Delete</button>
                     </div>
                 </ng-container>
+
+                
             </div>
         </div>
     </main>
