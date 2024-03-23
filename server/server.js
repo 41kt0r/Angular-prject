@@ -1669,7 +1669,6 @@
                 imageUrl: "https://cdn.c-magazine.com/uploads/article/2023-06-09/anastase-maragos-lrfuy93-hac-unsplash_21-48-51-021086.jpg",
                 description: "The Toyota Supra MK4 is a classic sports car produced from 1993 to 2002, celebrated for its sleek design and powerful inline-six engines, notably the 2JZ-GTE. It's revered in popular culture for its performance and tuning potential.",
                 author: "Peter",
-                likes: 155,
                 _id: "999ba0e1-022f-4a91-b952-f0625032d846",
             },
             "81fb3b4d-12dc-4fc7-a1a0-279fcc6613aa": {
@@ -1680,7 +1679,6 @@
                 imageUrl: "https://www.motortrend.com/uploads/2022/10/2023-Porsche-911-GT3-RS-in-motion-3.jpg?fit=around%7C875:492",
                 description: "The Porsche 911 GT3 is a track-focused variant of the iconic 911 sports car, prized for its lightweight design, aerodynamics, and potent naturally aspirated flat-six engine. It's revered for its precision handling and is a top choice for enthusiasts seeking an exhilarating driving experience.",
                 author: "George",
-                likes: 115,
                 _id: "81fb3b4d-12dc-4fc7-a1a0-279fcc6613aa",
             },
             "26eb2d61-ef4c-4412-a411-ea878276379c": {
@@ -1691,7 +1689,6 @@
                 imageUrl: "https://i.pinimg.com/736x/dd/e1/9f/dde19f4788553d98cb8493dafb4235f5.jpg",
                 description: "The Nissan GT-R R34 is an iconic sports car renowned for its powerful twin-turbo engine, advanced all-wheel-drive system, and distinctive design. It's celebrated for its exceptional performance and is a symbol of Japanese automotive engineering prowess.",
                 author: "George",
-                likes: 102,
                 _id: "26eb2d61-ef4c-4412-a411-ea878276379c",
             },
             "481457e6-742f-46a9-842e-674d933c76d4": {
@@ -1702,7 +1699,6 @@
                 imageUrl: "https://s1.cdn.autoevolution.com/images/news/1969-chevrolet-camaro-is-126k-worth-of-all-black-muscle-power-151468_1.jpg",
                 description: "The 1969 Chevrolet Camaro is an iconic American muscle car known for its powerful V8 engines and distinctive, aggressive design. It's revered as a symbol of the golden era of muscle cars and remains a favorite among enthusiasts and collectors.",
                 author: "Peter",
-                likes: 68,
                 _id: "481457e6-742f-46a9-842e-674d933c76d4",
             },
             "25ecfdd1-561a-463f-9828-42cd7e30c490": {
@@ -1713,7 +1709,6 @@
                 imageUrl: "https://financialexpresswpcontent.s3.amazonaws.com/uploads/2017/09/Lamborgini-Aventador-S-Roadster-large.jpeg",
                 description: "The 2018 Lamborghini Aventador is a top-tier supercar, featuring a distinctive design and a powerful V12 engine that delivers unmatched performance and luxury.",
                 author: "George",
-                likes: 75,
                 _id: "25ecfdd1-561a-463f-9828-42cd7e30c490",
             },
         }

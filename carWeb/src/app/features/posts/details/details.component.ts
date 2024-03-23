@@ -36,6 +36,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
     this.isLogged = this.authService.isLogged;
 
     const carId: string = this.route.snapshot.params['carId'];
+    
     this.userId = this.authService.getUserData()?._id as string;
     this.likes$ = this.PostsService.postTotalLikes(carId);
     this.canLike$ = this.PostsService.canLike(carId, this.userId);
@@ -75,7 +76,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
       complete: () => {
         this.canLike$ = this.PostsService.canLike(postId, this.userId);
         this.likes$ = this.PostsService.postTotalLikes(postId);
-        this.router.navigate(['/catalog', 'details', postId]);
+        // this.router.navigate(['/catalog', 'details', postId]);
       },
     });
     

@@ -13,6 +13,7 @@ export class CatalogComponent implements OnInit, OnDestroy {
   postsList: PostInterface[] = [];
   subscribe!: Subscription;
   errorMessage!: string;
+  titleService: any;
 
   constructor(private PostsService: PostsService) { }
 

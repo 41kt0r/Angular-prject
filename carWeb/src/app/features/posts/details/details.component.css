@@ -79,10 +79,18 @@
 }
 
 .detBtn {
+    text-decoration: none;
     padding: 8px 25px;
     border-radius: 100px;
     background-color: #01e5df;
     border: 0px solid #01e5df;
+    color: #000;
+    
+}
+
+.msgAfterLike {
+    text-decoration: none;
+    color: #fff;
 }
 
 .detBtn:hover {

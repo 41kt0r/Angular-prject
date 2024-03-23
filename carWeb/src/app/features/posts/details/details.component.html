@@ -10,7 +10,7 @@
                 </div>
                 <div class="details__button">
                     <ng-container *ngIf="!isOwner && isLogged">
-                        <div class="likeButtons">
+                        <div >
                           <div *ngIf="(canLike$ | async) == 0">
                             <a href="javascript:void(0)" (click)="postLike(car._id)" class="detBtn">
                               Like
@@ -18,7 +18,7 @@
                           </div>
                 
                           <div *ngIf="(canLike$ | async) != 0">
-                            <a href="javascript:void(0)">
+                            <a href="javascript:void(0)" class="msgAfterLike">
                               You have already liked this post!
                             </a>
                           </div>
