@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&display=swap');
+
+body {
+    font-family: 'Josefin Slab';
+    font-weight: 400;
+    --color1: #fff;
+    --color2: #181818;
+    height: 88.3vh;
+}
+
+/* .home-main {
+    color: #fff;
+    background: #01FFF9;
+    background: conic-gradient(from 315deg, #01FFF9, #010101);
+    padding: 2em;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+}
+
+.homeWrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100;
+    
+} */
+/* main cards */
+
+

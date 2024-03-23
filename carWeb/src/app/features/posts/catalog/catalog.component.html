@@ -1,0 +1,35 @@
+<div class="catalogWrapper">
+    <main class="catalog-main">
+        <div class="test">
+            <div class="catalog-information" >
+                <div class="catalog-heading">
+                    <h1 class="catalog-title">This is our catalog with one of the greatest cars ever</h1>
+                </div>
+                <div class="catalog-paragraph">
+                    <p>
+                        Our catalog is created with the aim to allow you, as users, to freely find information about a
+                        specific car or, as an author, to publish such information.</p>
+                </div>
+            </div>
+            <div class="containerForContainer">
+                <div class="card-container">
+                    <div class="catalog-singleCard" *ngFor="let post of postsList">
+                        <div class="img-container">
+                            <img class="car-img"
+                                src="{{post.imageUrl}}"
+                                alt="">
+                        </div>
+                        <div class="car-info">
+                            <h5>{{post.brand}}</h5>
+                            <div class="card-author">
+                                <p>Author:</p>
+                                <p>{{post.author}}</p>
+                            </div>
+                        </div>
+                        <li><a class="seeCar__btn" [routerLink]="['/cars', 'details', post._id]">See the car</a></li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

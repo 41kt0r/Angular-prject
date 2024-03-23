@@ -1,0 +1,30 @@
+<nav class="navigation">
+
+    <ul class="nav-bar">
+        <li class="logo"><a routerLink="/home"><img src="../../../assets/mainLogo.png" alt="logo"></a></li>
+
+        <input type="checkbox" id="check">
+        <span class="menu">
+            <div class="navigation-div">
+                <li><a routerLink="/catalog">Catalog</a></li>
+            </div>
+            <ng-container *ngIf="!isLogged">
+                <div class="navigation-div guest">
+                    <li><a routerLink="/login">Login</a></li>
+                    <li><a routerLink="/register">Register</a></li>
+                </div>
+            </ng-container>
+
+            <ng-container *ngIf="isLogged">
+                <div class="navigation-div user">
+                    <li><a routerLink="/create">Add car</a></li>
+                    <li><a (click)="logout()">Logout</a></li>
+                </div>
+                <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
+            </ng-container>
+
+
+        </span>
+        <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
+    </ul>
+</nav>

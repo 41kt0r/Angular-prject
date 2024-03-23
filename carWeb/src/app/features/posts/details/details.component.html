@@ -1,0 +1,61 @@
+<div class="detailsWrapper" *ngIf="car">
+    <main class="details-main">
+        <div class="cardInfo">
+            <div class="imageAndButtons">
+                <div class="details__image">
+                    <img class="current__img" src="{{ car.imageUrl}}" alt="">
+                </div>
+                <div class="card__likes">
+                    <p>Likes:</p>
+                    <P>{{ car.likes }}</P>
+                </div>
+                <div class="details__button">
+                    <ng-container *ngIf="!isOwner && isLogged">
+                        <div class="guest__buttons" *ngIf="(canLike$ | async) == 0">
+                            <button class="detBtn" href="javascript:void(0)" (click)="episodeLike(car._id)">Like</button>
+                            <!-- <button class="detBtn">Coment</button> -->
+                        </div>
+                    </ng-container>
+                   
+                </div>
+            </div>
+            <div class="details__info">
+                <div class="about__card">
+                    <div>
+                        <h5>BRAND</h5>
+                        <p>{{ car.brand }}</p>
+                    </div>
+
+                    <div>
+                        <h5>MODEL</h5>
+                        <p>{{ car.model }}</p>
+                    </div>
+
+                    <div>
+                        <h5>YEAR</h5>
+                        <p>{{ car.year }}</p>
+                    </div>
+
+                    <div>
+                        <h5>DESCRIPTION</h5>
+                        <p>{{ car.description }}</p>
+                    </div>
+
+                    <div>
+                        <h5>AUTHOR</h5>
+                        <p>{{ car.author }}</p>
+                    </div>
+
+                    
+                </div>
+                
+                <ng-container *ngIf="isOwner">
+                    <div class="owner__buttons">
+                        <button class="detBtn" [routerLink]="['/cars', 'edit', car._id]">Edit</button>
+                        <button class="detBtn" href="javascript:void(0)" (click)="removePost(car._id)">Delete</button>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </main>
+</div>

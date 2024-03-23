@@ -1,0 +1,37 @@
+<div class="catalogWrapper">
+    <main class="aadd-main">
+        <div class="addContainer">
+            <div class="registerLoginWrapper">
+                <form #createForm="ngForm" (ngSubmit)="createMethod(createForm)" class="createForm">
+                    <h1 class="registerLoginTitle">Add Car</h1>
+                    <div class="input-box">
+                        <input ngModel #brand="ngModel" name="brand" type="text" placeholder="Brand" required>
+                        <i class="fa-solid fa-car"></i>
+                    </div>
+
+                    <div class="input-box">
+                        <input ngModel #model="ngModel" type="text" name="model" placeholder="Model" required>
+                        <i class="fa-solid fa-car"></i>
+                    </div>
+                    
+                    <div class="input-box">
+                        <input ngModel #imageUrl="ngModel" name="imageUrl" type="url" placeholder="Image" required>
+                        <i class="fa-solid fa-image"></i>
+                    </div>
+
+                    <div class="input-box">
+                        <input ngModel #year="ngModel" name="year" type="number" placeholder="Year" required>
+                        <i class="fa-regular fa-calendar"></i>
+                    </div>
+
+                    <div class="input-box">
+                        <input ngModel #description="ngModel" type="text" name="description" maxlength="150" placeholder="Description" required>
+                        <i class="fa-solid fa-pen"></i>
+                    </div>
+
+                    <button type="submit" class="btn">Add your car</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>

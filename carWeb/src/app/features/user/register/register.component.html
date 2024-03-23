@@ -1,0 +1,47 @@
+<body>
+    <div class="loginRegisterWrapper">
+
+        <main class="loginRegister-main">
+            <div class="registerLoginContainer">
+
+                <div class="registerLoginWrapper">
+                    <form class="registerForm" #registerForm="ngForm" (ngSubmit)="registerMethod(registerForm)">
+                        <h1 class="registerLoginTitle">Register </h1>
+                        <div class="input-box">
+                            <input ngModel #email="ngModel" name="email" type="text" placeholder="Email" required pattern="^[a-zA-Z0-9_\.]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$">
+                            <i class="fa-solid fa-user"></i>
+                            <ng-container *ngIf="email.invalid && email.touched">
+                                <div class="ng-container-msg" *ngIf="email.errors?.['required']">Email is required </div>
+                                <div class="ng-container-msg" *ngIf="email.errors?.['pattern']">Email must be in valid format</div>
+                              </ng-container>
+                        </div>
+
+                        <div class="input-box">
+                            <input ngModel #password="ngModel" type="password" name="password" placeholder="Password" required minlength="6">
+                            <i class="fa-solid fa-key"></i>
+                            <ng-container *ngIf="password.invalid && password.touched">
+                                <div class="ng-container-msg" *ngIf="password.errors?.['required']">Password is required</div>
+                                <div class="ng-container-msg" *ngIf="password.errors?.['minlength']">Аt least 6 characters long</div>
+                              </ng-container>
+                        </div>
+
+                        <div class="input-box">
+                            <input ngModel #repassword="ngModel" type="password" name="repassword" placeholder="Confirm Password" required minlength="6">
+                            <i class="fa-solid fa-key"></i>
+                            <ng-container *ngIf="!password.invalid || (repassword.invalid && repassword.touched)">
+                                    
+                                <div class="ng-container-msg" *ngIf="password.value != repassword.value">Passwords don't match</div>
+                              </ng-container>
+                        </div>
+
+                        <button type="submit" class="btn">Register</button>
+
+                        <div class="register-login-link">
+                            <p>Alredy have an acount <a routerLink="/login">Login</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>

@@ -1,0 +1,46 @@
+<div class="catalogWrapper">
+
+    <main class="aadd-main">
+        <div class="addContainer">
+            <div class="registerLoginWrapper">
+                <form *ngIf="post" class="md:space-y-6" #editForm="ngForm" (ngSubmit)="editHandler(editForm)" ngClass="editForm">
+                    <h1 class="registerLoginTitle">Edit Car</h1>
+                    <div class="input-box">
+                        <input   ngModel #brand="ngModel" [(ngModel)]="post.brand" name="brand"  type="text" placeholder="Brand" required>
+                        <i class="fa-solid fa-car"></i>
+
+                        <!-- Копирана грешка за задължителност -->
+                        <ng-container *ngIf="brand.invalid && brand.touched">
+                            <div *ngIf="brand.errors?.['required']">Name is required</div>
+                        </ng-container>
+                        
+                    </div>
+
+                    <div class="input-box">
+                        <input ngModel #model="ngModel" [(ngModel)]="post.model" name="model" type="text" placeholder="Model" required>
+                        <i class="fa-solid fa-car"></i>
+                    </div>
+                    
+                    <div class="input-box">
+                        <input gModel #imageUrl="ngModel" [(ngModel)]="post.imageUrl" name="imageUrl" type="url" placeholder="Image" required>
+                        <i class="fa-solid fa-image"></i>
+                    </div>
+
+                    <div class="input-box">
+                        <input ngModel #year="ngModel" [(ngModel)]="post.year" name="year" type="number" placeholder="Year" required>
+                        <i class="fa-regular fa-calendar"></i>
+                    </div>
+
+                    <div class="input-box">
+                        <input ngModel #description="ngModel" [(ngModel)]="post.description" name="description" type="text" maxlength="150" placeholder="Description" required>
+                        <i class="fa-solid fa-pen"></i>
+                    </div>
+                    
+                    
+                    <!-- Тука не го разбирам напълно тоя editForm -->
+                    <button  type="submit" class="btn">Edit your car</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>

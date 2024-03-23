@@ -1,0 +1,42 @@
+<body>
+    
+    <div class="loginRegisterWrapper">
+
+        <main class="loginRegister-main">
+            <div class="registerLoginContainer">
+                <div class="registerLoginWrapper">
+                    <form class="loginForm" #loginForm="ngForm" (ngSubmit)="loginMethod(loginForm)">
+                        <h1 class="registerLoginTitle">Login</h1>
+                        <div class="input-box">
+                            <input ngModel #email="ngModel" name="email" type="text" placeholder="Email" required pattern="^[a-zA-Z0-9_\.]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$">
+                            <i class="fa-solid fa-user"></i>
+                            <ng-container *ngIf="email.invalid && email.touched">
+                                <div class="ng-container-msg" *ngIf="email.errors?.['required']">Email is required </div>
+                                <div class="ng-container-msg" *ngIf="email.errors?.['pattern']">Email must be in valid format</div>
+                            </ng-container>
+                        </div>
+                        
+
+                        <div class="input-box">
+                            <input ngModel #password="ngModel" name="password" type="password" placeholder="Password" required minlength="6">
+                            <i class="fa-solid fa-key"></i>
+                            <ng-container class="ng-container-msg" *ngIf="password.invalid && password.touched">
+                                <div class="ng-container-msg" *ngIf="password.errors?.['required']">Password is required </div>
+                                <div class="ng-container-msg" *ngIf="password.errors?.['minlength']">Аt least 6 characters long</div>
+                            </ng-container>
+                        </div>
+
+                        
+
+                        <button  type="submit" class="btn">Login</button>
+
+                        <div class="register-login-link">
+                            <p>Don't have an acount <a routerLink="/register" >Register</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>

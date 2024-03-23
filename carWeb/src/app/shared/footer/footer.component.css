@@ -1,0 +1,28 @@
+.footer__container {
+    font-size: 12px;
+    color: white;
+    padding: 0 40px 0 40px ;
+    background-color: black;
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.footer__paragraph {
+    
+    text-align: center;
+}
+
+.social__list {
+    display: flex;
+    gap: 1em;
+    
+    justify-content: center;
+}
+
+.list__item {
+    list-style: none;
+    color: #fff;
+}
