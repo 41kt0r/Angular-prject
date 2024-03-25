@@ -43,8 +43,10 @@ export class LoginComponent implements OnInit, OnDestroy {
         
         if (error.message.includes('Unknown Error')) {
           this.errorMessage = 'Server not connected!'
-        } else {
+        }
+        else {
           this.errorMessage = error.error.message;
+          alert('Invalid email or password');
         }
       }
     });

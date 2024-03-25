@@ -17,16 +17,16 @@
                         </div>
 
                         <div class="input-box">
-                            <input ngModel #password="ngModel" type="password" name="password" placeholder="Password" required minlength="6">
+                            <input ngModel #password="ngModel" type="password" name="password" placeholder="Password" required minlength="6" pattern="^(?!\s)(?=\D*\d).{6,}$">
                             <i class="fa-solid fa-key"></i>
                             <ng-container *ngIf="password.invalid && password.touched">
                                 <div class="ng-container-msg" *ngIf="password.errors?.['required']">Password is required</div>
-                                <div class="ng-container-msg" *ngIf="password.errors?.['minlength']">Аt least 6 characters long</div>
+                                <div class="ng-container-msg" *ngIf="password.errors?.['minlength'] || password.errors?.['pattern']">Password must be in a valid format</div>
                               </ng-container>
                         </div>
 
                         <div class="input-box">
-                            <input ngModel #repassword="ngModel" type="password" name="repassword" placeholder="Confirm Password" required minlength="6">
+                            <input ngModel #repassword="ngModel" type="password" name="repassword" placeholder="Confirm Password" required minlength="6" pattern="^(?!\s)(?=\D*\d).{6,}$">
                             <i class="fa-solid fa-key"></i>
                             <ng-container *ngIf="!password.invalid || (repassword.invalid && repassword.touched)">
                                     
@@ -34,7 +34,7 @@
                               </ng-container>
                         </div>
 
-                        <button type="submit" class="btn">Register</button>
+                        <button [disabled]="registerForm.invalid" type="submit" class="btn">Register</button>
 
                         <div class="register-login-link">
                             <p>Alredy have an acount <a routerLink="/login">Login</a></p>
