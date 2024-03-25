@@ -23,6 +23,11 @@ body {
     height: 88.3vh;
 }
 
+.ng-container-msg {
+    text-align: center;
+    padding: 10px;
+}
+
 /* .home-main {
     color: #fff;
     background: #01FFF9;

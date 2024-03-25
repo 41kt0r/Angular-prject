@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { Title } from '@angular/platform-browser';
 
 import { PostInterface } from 'src/app/core/interfaces/Post';
 import { PostsService } from 'src/app/core/services/posts.service';
@@ -13,11 +14,11 @@ export class CatalogComponent implements OnInit, OnDestroy {
   postsList: PostInterface[] = [];
   subscribe!: Subscription;
   errorMessage!: string;
-  titleService: any;
 
-  constructor(private PostsService: PostsService) { }
+  constructor(private PostsService: PostsService, private titleService: Title) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle("Catalog");
     this.subscribe = this.PostsService.getAllPosts().subscribe({
       next: (posts) => {
         this.postsList = posts;

@@ -5,28 +5,54 @@
                 <form #createForm="ngForm" (ngSubmit)="createMethod(createForm)" class="createForm">
                     <h1 class="registerLoginTitle">Add Car</h1>
                     <div class="input-box">
-                        <input ngModel #brand="ngModel" name="brand" type="text" placeholder="Brand" required>
+                        <input ngModel #brand="ngModel" name="brand" type="text" placeholder="Brand" required minlength="4">
                         <i class="fa-solid fa-car"></i>
+                        <ng-container *ngIf="brand.invalid && brand.touched">
+                            <div class="ng-container-msg" *ngIf="brand.errors?.['required']">Name is required
+                            </div>
+                            <div class="ng-container-msg" *ngIf="brand.errors?.['minlength']">Name must be at least 4 characters long
+                            </div>
+                        </ng-container>
                     </div>
 
                     <div class="input-box">
-                        <input ngModel #model="ngModel" type="text" name="model" placeholder="Model" required>
+                        <input ngModel #model="ngModel" type="text" name="model" placeholder="Model" required minlength="4">
                         <i class="fa-solid fa-car"></i>
+                        <ng-container *ngIf="model.invalid && model.touched">
+                            <div class="ng-container-msg" *ngIf="model.errors?.['required']">Name is required
+                            </div>
+                            <div class="ng-container-msg" *ngIf="model.errors?.['minlength']">Name must be at least 4 characters long
+                            </div>
+                        </ng-container>
                     </div>
                     
                     <div class="input-box">
                         <input ngModel #imageUrl="ngModel" name="imageUrl" type="url" placeholder="Image" required>
                         <i class="fa-solid fa-image"></i>
+                        <ng-container *ngIf="imageUrl.invalid && imageUrl.touched">
+                            <div class="ng-container-msg" *ngIf="imageUrl.errors?.['required']">Image is required
+                            </div>
+                        </ng-container>
                     </div>
 
                     <div class="input-box">
-                        <input ngModel #year="ngModel" name="year" type="number" placeholder="Year" required>
+                        <input ngModel #year="ngModel" name="year" type="number" placeholder="Year" required pattern="^(?!\s)(?=\D*\d).{1,}$">
                         <i class="fa-regular fa-calendar"></i>
+                        <ng-container *ngIf="year.invalid && year.touched">
+                            <div class="ng-container-msg" *ngIf="year.errors?.['required']">Year is required
+                            </div>
+                            <div class="ng-container-msg" *ngIf="year.errors?.['pattern']">Password must be in a valid format</div>
+                            
+                        </ng-container>
                     </div>
 
                     <div class="input-box">
                         <input ngModel #description="ngModel" type="text" name="description" maxlength="150" placeholder="Description" required>
                         <i class="fa-solid fa-pen"></i>
+                        <ng-container *ngIf="description.invalid && description.touched">
+                            <div class="ng-container-msg" *ngIf="description.errors?.['required']">Description is required
+                            </div>
+                          </ng-container>
                     </div>
 
                     <button  [disabled]="createForm.invalid" type="submit" class="btn">Add your car</button>

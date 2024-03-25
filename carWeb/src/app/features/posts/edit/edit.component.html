@@ -6,12 +6,14 @@
                 <form *ngIf="post" class="md:space-y-6" #editForm="ngForm" (ngSubmit)="editHandler(editForm)" ngClass="editForm">
                     <h1 class="registerLoginTitle">Edit Car</h1>
                     <div class="input-box">
-                        <input   ngModel #brand="ngModel" [(ngModel)]="post.brand" name="brand"  type="text" placeholder="Brand" required>
+                        <input   ngModel #brand="ngModel" [(ngModel)]="post.brand" name="brand"  type="text" placeholder="Brand" required minlength="4">
                         <i class="fa-solid fa-car"></i>
 
-                        <!-- Копирана грешка за задължителност -->
                         <ng-container *ngIf="brand.invalid && brand.touched">
-                            <div *ngIf="brand.errors?.['required']">Name is required</div>
+                            <div class="ng-container-msg" *ngIf="brand.errors?.['required']">Name is required
+                            </div>
+                            <div class="ng-container-msg" *ngIf="brand.errors?.['minlength']">Name must be at least 4 characters long
+                            </div>
                         </ng-container>
                         
                     </div>
@@ -19,21 +21,41 @@
                     <div class="input-box">
                         <input ngModel #model="ngModel" [(ngModel)]="post.model" name="model" type="text" placeholder="Model" required>
                         <i class="fa-solid fa-car"></i>
+                        <ng-container *ngIf="model.invalid && model.touched">
+                            <div class="ng-container-msg" *ngIf="model.errors?.['required']">Name is required
+                            </div>
+                            <div class="ng-container-msg" *ngIf="model.errors?.['minlength']">Name must be at least 4 characters long
+                            </div>
+                        </ng-container>
                     </div>
                     
                     <div class="input-box">
-                        <input gModel #imageUrl="ngModel" [(ngModel)]="post.imageUrl" name="imageUrl" type="url" placeholder="Image" required>
+                        <input gModel #imageUrl="ngModel" [(ngModel)]="post.imageUrl" name="imageUrl" type="url" placeholder="Image" required >
                         <i class="fa-solid fa-image"></i>
+                        <ng-container *ngIf="imageUrl.invalid && imageUrl.touched">
+                            <div class="ng-container-msg" *ngIf="imageUrl.errors?.['required']">Image is required
+                            </div>
+                        </ng-container>
                     </div>
 
                     <div class="input-box">
-                        <input ngModel #year="ngModel" [(ngModel)]="post.year" name="year" type="number" placeholder="Year" required>
+                        <input ngModel #year="ngModel" [(ngModel)]="post.year" name="year" type="number" placeholder="Year" required pattern="^(19|20)\d{2}$">
                         <i class="fa-regular fa-calendar"></i>
+                        <ng-container *ngIf="year.invalid && year.touched">
+                            <div class="ng-container-msg" *ngIf="year.errors?.['required']">Year is required
+                            </div>
+                            <div class="ng-container-msg" *ngIf="year.errors?.['pattern']">Year must be in a valid format</div>
+                            
+                        </ng-container>
                     </div>
 
                     <div class="input-box">
                         <input ngModel #description="ngModel" [(ngModel)]="post.description" name="description" type="text" maxlength="150" placeholder="Description" required>
                         <i class="fa-solid fa-pen"></i>
+                        <ng-container *ngIf="description.invalid && description.touched">
+                            <div class="ng-container-msg" *ngIf="description.errors?.['required']">Description is required
+                            </div>
+                          </ng-container>
                     </div>
                     
                     

@@ -3,11 +3,14 @@ import { CommonModule } from '@angular/common';
 import { PostsModule } from './posts/posts.module';
 import { UserModule } from './user/user.module';
 import { FormsModule } from '@angular/forms';
+import { NotFoundComponent } from './posts/not-found/not-found.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    // NotFoundComponent
+  ],
   imports: [
     CommonModule,
     PostsModule,
