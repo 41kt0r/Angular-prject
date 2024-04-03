@@ -16,9 +16,9 @@ email: george@abv.bg
 password: 123456
 
 SoftUni other requirements:
-Error handling
-Data validation
-Use TypeScript with specific types
-Implement route guards
-Good usability. Good UI and UX.
+- Error handling
+- Data validation
+- Use TypeScript with specific types
+- Implement route guards
+- Good usability. Good UI and UX.
 Pages:
