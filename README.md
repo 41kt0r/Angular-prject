@@ -43,3 +43,10 @@ Pages:
 
 - Owner Details Page
 ![Owner Details Page](https://github.com/41kt0r/Angular-project/assets/151082238/c30daf1c-2a5e-4d1c-bdcf-029850231d57)
+
+- Edit Page
+![Edit Page](https://github.com/41kt0r/Angular-project/assets/151082238/6383752c-e2b2-490d-b0ee-123b5b0b1654)
+
+- Create Page
+![Create Page](https://github.com/41kt0r/Angular-project/assets/151082238/82fad8ff-ade3-4701-9a45-abbee56b3083)
+
