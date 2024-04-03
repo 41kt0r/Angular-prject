@@ -32,14 +32,10 @@ export class PostsService {
     return this.http.post<PostInterface>(url, postData);
   }
 
-  // опит за delete button
-
   deletePostById(postId: string): Observable<unknown> {
     const url = `http://localhost:3030/data/cars/${postId}`;
     return this.http.delete<unknown>(url);
   }
-
-  // opit za like button
 
   postTotalLikes(postId: string): Observable<number> {
     const url = `http://localhost:3030/data/likes?where=postId%3D%22${postId}%22&distinct=_ownerId&count`;
