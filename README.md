@@ -9,11 +9,11 @@ Functionalities:
 - UserMode: After registration, users can both like posts from other users and create, edit, or delete their own posts.
 
 Test accounts:
-email: peter@abv.bg
-password: 123456
+- email: peter@abv.bg
+- password: 123456
 
-email: george@abv.bg
-password: 123456
+- email: george@abv.bg
+- password: 123456
 
 SoftUni other requirements:
 - Error handling
